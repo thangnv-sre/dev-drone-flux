@@ -1,10 +1,7 @@
-kind: pipeline
-type: docker
-name: default
-
-steps:
-- name: docker  
-  image: plugins/docker
-  settings:
-    repo: foo/bar
-    tags: latest
+pipeline:
+  build:
+    image: docker
+    commands:
+      - docker build -t ruby:test-`date +%D` .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
