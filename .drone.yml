@@ -13,7 +13,7 @@ steps:
     auto_tag_suffix: 
       - ${DRONE_BRANCH}-${DRONE_COMMIT_SHA}
       - latest
-    cache_from: true
+    cache_from: thangnvpixtavietnam/test-drone:latest
     auto_tag: true
     username: thangnvpixtavietnam
     password: MyAVe58XvU2GoY
