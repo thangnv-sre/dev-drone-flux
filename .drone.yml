@@ -3,5 +3,3 @@ pipeline:
     image: docker
     commands:
       - docker build -t ruby:test-`date +%D` .
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
