@@ -3,7 +3,8 @@ type: docker
 name: default
 
 steps:
-- name: build
-  image: ruby:3.1.2
-  commands:
-  - gem install rails bundler
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: foo/bar
+    tags: latest
