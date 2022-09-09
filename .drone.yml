@@ -10,7 +10,8 @@ steps:
     repo: thangnvpixtavietnam/test-drone
     # tags: 
     #   - ${DRONE_BRANCH}-${DRONE_COMMIT_SHA}
-    auto_tag_suffix: amd64
+    auto_tag_suffix: 
+      - ${DRONE_BRANCH}-${DRONE_COMMIT_SHA}
     auto_tag: true
     username: thangnvpixtavietnam
     password: MyAVe58XvU2GoY
