@@ -1,14 +1,7 @@
-# Dockerfile.rails
-FROM ruby:3.1.2 AS rails-toolbox
-
-# Default directory
-ENV INSTALL_PATH /opt/app
-RUN mkdir -p $INSTALL_PATH
-
-# Install rails
-RUN gem install rails bundler
-#RUN chown -R user:user /opt/app
-WORKDIR /opt/app
-
-# Run a shell
-CMD ["/bin/sh"]
+FROM node:12-alpine
+RUN apk add --no-cache python2 g++ make
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000

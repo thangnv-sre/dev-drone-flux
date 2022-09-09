@@ -1,20 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: nodejs
   namespace: test-thangnv
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.nodejs: glob:main-*
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: nodejs
   template:
     metadata:
       labels:
-        app: nginx
+        app: nodejs
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.7.9
+      - name: nodejs
+        image: thangnvpixtavietnam/test-drone:main-200774756b94ccff6435829e8506266cb3842748
         ports:
         - containerPort: 80
