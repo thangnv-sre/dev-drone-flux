@@ -3,15 +3,12 @@ type: docker
 name: default
 
 steps:
-- name: build
-  image: docker
-  volumes:
-    - name: dockersock
-      path: /var/run
-  commands:
-  - docker ps
-
-
-volumes:
-  - name: dockersock
-    temp: {}
+- name: docker  
+  image: plugins/docker
+  settings:
+    imagePullPolicy: Always
+    repo: thangnvpixtavietnam/test-drone
+    tags: test
+    auto_tag: true
+    username: thangnvpixtavietnam
+    password: MyAVe58XvU2GoY
