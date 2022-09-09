@@ -3,4 +3,5 @@ pipeline:
     image: docker
     commands:
       - ls -la
+      - docker ps
       - docker build -t ruby:test-`date +%D` .
