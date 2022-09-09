@@ -8,5 +8,5 @@ steps:
   commands:
   - echo hello
   - echo world
-  - apk update && apk add wget
-  - wget ifconfig.me
+  - apk update && apk add wget curl
+  - curl ifconfig.me
