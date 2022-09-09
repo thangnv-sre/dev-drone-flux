@@ -1,12 +1,7 @@
-kind: pipeline
-type: docker
-name: default
-
-steps:
-- name: greeting
-  image: alpine
-  commands:
-  - echo hello
-  - echo world
-  - apk update && apk add wget curl
-  - curl ifconfig.me
+pipeline:
+  build:
+    image: docker
+    commands:
+      - docker build -t ruby:test-`date +%D` .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
