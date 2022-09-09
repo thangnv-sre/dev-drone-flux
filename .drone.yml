@@ -8,7 +8,9 @@ steps:
   settings:
     imagePullPolicy: Always
     repo: thangnvpixtavietnam/test-drone
-    tags: test
+    # tags: 
+    #   - ${DRONE_BRANCH}-${DRONE_COMMIT_SHA}
+    auto_tag_suffix: amd64
     auto_tag: true
     username: thangnvpixtavietnam
     password: MyAVe58XvU2GoY
