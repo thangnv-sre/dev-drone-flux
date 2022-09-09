@@ -22,7 +22,7 @@ spec:
         app: thangnvinfo
     spec:
       containers:
-      - name: podinfod
+      - name: thangnvinfo
         image: ghcr.io/stefanprodan/podinfo:6.2.0
         imagePullPolicy: IfNotPresent
         ports:
