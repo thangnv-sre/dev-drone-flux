@@ -10,5 +10,5 @@ steps:
   - echo world
 
 trigger:
-  branch:
-  - main
+  event:
+  - push
