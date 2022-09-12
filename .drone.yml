@@ -5,11 +5,15 @@ name: default
 steps:
 - name: docker  
   image: plugins/docker
+  environment:
+
   settings:
     imagePullPolicy: Always
+    environment:
+      - dronedate: 'date +%s'
     repo: thangnvpixtavietnam/test-drone
     tags: 
-      - ${DRONE_BRANCH}-$(date +%s)
+      - ${DRONE_BRANCH}-$(dronedate)
       - latest
     cache_from: thangnvpixtavietnam/test-drone:latest
     username: thangnvpixtavietnam
