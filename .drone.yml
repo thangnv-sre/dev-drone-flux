@@ -1,20 +1,22 @@
 kind: pipeline
-type: docker
 name: default
 
 steps:
-- name: docker  
-  image: plugins/docker
-  environment:
+- name: build
+  image: docker
+  volumes:
+  - name: dockersock
+    path: /var/run/docker.sock
+  commands:
+  - docker build -t foo:latest
 
-  settings:
-    imagePullPolicy: Always
-    environment:
-      - dronedate: 'date +%s'
-    repo: thangnvpixtavietnam/test-drone
-    tags: 
-      - ${DRONE_BRANCH}-$(dronedate)
-      - latest
-    cache_from: thangnvpixtavietnam/test-drone:latest
-    username: thangnvpixtavietnam
-    password: MyAVe58XvU2GoY
+- name: test
+  image: foo:latest
+  pull: if-not-exists
+  commands:
+  - echo bar
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
