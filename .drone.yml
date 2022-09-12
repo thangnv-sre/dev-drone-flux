@@ -5,8 +5,8 @@ name: default
 steps:
 - name: docker  
   image: plugins/docker
-  environment:
-    - dronedate: 'date +%s'
+  command:
+    - dronedate='date +%s'
   settings:
     imagePullPolicy: Always
     repo: thangnvpixtavietnam/test-drone
