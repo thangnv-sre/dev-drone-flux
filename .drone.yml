@@ -5,13 +5,11 @@ name: default
 steps:
 - name: docker  
   image: plugins/docker
-  command:
-    - dronedate='date +%s'
   settings:
     imagePullPolicy: Always
     repo: thangnvpixtavietnam/test-drone
     tags: 
-      - ${DRONE_BRANCH}-$(dronedate)
+      - ${DRONE_BRANCH}-$(DRONE_BUILD_STARTED)
       - latest
     cache_from: thangnvpixtavietnam/test-drone:latest
     username: thangnvpixtavietnam
