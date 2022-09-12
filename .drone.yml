@@ -9,7 +9,7 @@ steps:
     imagePullPolicy: Always
     repo: thangnvpixtavietnam/test-drone
     tags: 
-      - ${DRONE_BRANCH}-${DRONE_COMMIT_SHA}-$(date +%s)
+      - ${DRONE_BRANCH}-$(date +%s)
       - latest
     cache_from: thangnvpixtavietnam/test-drone:latest
     username: thangnvpixtavietnam
