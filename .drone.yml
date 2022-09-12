@@ -9,7 +9,7 @@ steps:
     imagePullPolicy: Always
     repo: thangnvpixtavietnam/test-drone
     tags: 
-      - ${DRONE_BRANCH}-$(DRONE_BUILD_STARTED)
+      - ${DRONE_BRANCH}-${DRONE_BUILD_STARTED}
       - latest
     cache_from: thangnvpixtavietnam/test-drone:latest
     username: thangnvpixtavietnam
