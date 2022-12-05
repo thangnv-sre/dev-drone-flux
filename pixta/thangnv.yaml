@@ -4,7 +4,7 @@ metadata:
   name: thangnv
   namespace: flux-system
 spec:
-  interval: 5s
+  interval: 2m0s
   path: ./thangnv
   prune: true
   sourceRef:
