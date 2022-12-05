@@ -1,11 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: thangnv
+  name: aws
   namespace: flux-system
 spec:
   interval: 2m0s
-  path: ./thangnv
+  path: ./aws
   prune: true
   sourceRef:
     kind: GitRepository
