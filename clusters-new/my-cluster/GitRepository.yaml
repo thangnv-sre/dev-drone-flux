@@ -4,7 +4,7 @@ metadata:
   name: my-secrets
   namespace: flux-system
 spec:
-  interval: 5s
+  interval: 10s
   ref:
     branch: main
   url: https://github.com/thangnv-sre/dev-drone-flux.git

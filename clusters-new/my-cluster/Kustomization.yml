@@ -8,7 +8,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: my-secrets
-  path: ./sops
+  path: ./sops-test
   prune: true
   decryption:
     provider: sops
