@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 2m0s
-  path: ./workloads/kustomize/overlays/production/search
+  path: ./workloads/kustomize/overlays/production/search/title-translation
   prune: true
   sourceRef:
     kind: GitRepository
