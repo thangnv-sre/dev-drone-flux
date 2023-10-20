@@ -1,3 +1,5 @@
+require 'csv'
+
 # read csv file that have title in first line and convert to array of integer
 item_ids = CSV.read('ng_footage_item_id.csv', headers: true).map { |row| row['item_id'].to_i } and true
 # get item data from the list of item_ids with the fields we need: id, language
